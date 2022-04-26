@@ -1,13 +1,24 @@
 import React, { useState } from 'react'
 import { Button, Stack, ThemeProvider, Typography } from '@mui/material'
 
-import { Navbar, Textbox } from './components'
+import { Navbar, Textbox, ItemContainer } from './components'
 import { theme } from './theme'
+import { useFetch } from './hooks/fetch-hook'
+
+const apiUrl = import.meta.env.VITE_API_ENDPOINT
 
 const App = () => {
-  const [isShown, setIsShown] = useState(false)
+  const [data, setData] = useState([])
 
-  const toggle = () => setIsShown(!isShown)
+  const { loading, error, clearError, sendRequest } = useFetch()
+
+  const handleApiFetch = async () => {
+    try {
+      const data = await sendRequest(apiUrl)
+      setData(data)
+      console.log(data)
+    } catch (err) {}
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -21,16 +32,22 @@ const App = () => {
             Here you will find our collection of APIs for developers.
           </Typography>
         </Stack>
-        <Button variant='contained' onClick={toggle}>
-          Enter API hub
-        </Button>
+        <Stack direction='row' alignItems='center' spacing={2}>
+          <Button variant='contained' onClick={handleApiFetch}>
+            Enter API hub
+          </Button>
+          <Button variant='contained' onClick={() => setData([])}>
+            Refresh
+          </Button>
+        </Stack>
 
-        {isShown &&
-        <Stack direction={{ xs: 'column', md: 'row'}} spacing={3}>
-          <Textbox />
-          <Textbox />
-          <Textbox />
-        </Stack>}
+        <ItemContainer>
+          {loading && <h1>Loading</h1>}
+          {error && <h1>Error</h1>}
+          {data && data.map(item => 
+            <Textbox key={item.id} data={item} />
+          )}
+        </ItemContainer>
       </main>
     </ThemeProvider>
   )
