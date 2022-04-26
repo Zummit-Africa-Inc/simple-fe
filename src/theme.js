@@ -18,6 +18,17 @@ export const theme = createTheme({
                         transform: 'translateY(-5px)',
                         backgroundColor: 'var(--base)'
                     }
+                },
+                outlined: {
+                    backgroundColor: 'var(--error)',
+                    color: 'var(--light)',
+                    transition: '0.3s ease',
+                    '&:hover': {
+                        transform: 'translateY(-5px)',
+                        backgroundColor: 'var(--light)',
+                        color: 'var(--error)',
+                        borderColor: 'var(--error)'
+                    }
                 }
             }
         }
