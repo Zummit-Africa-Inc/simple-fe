@@ -25,7 +25,7 @@ const TextWrapper = styled('div')(({ theme }) => ({
   borderRadius: '5px'
 }))
 
-const Textbox = () => {
+const Textbox = ({ data }) => {
   const classes = useStyles()
 
   return (
@@ -39,7 +39,7 @@ const Textbox = () => {
           <BookmarkBorderOutlined />
           </Stack>
           <Typography variant='h6' color='textPrimary' marginY={2}>
-            Text summarizer API
+            {data.name}
           </Typography>
           <Typography variant='subtitle1' color='textSecondary' gutterBottom>
             The simplest and most effective way to skip the plenty text, and focus on the main points in ... 
