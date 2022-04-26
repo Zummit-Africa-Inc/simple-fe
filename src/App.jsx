@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Stack, ThemeProvider, Typography } from '@mui/material'
 
-import { Navbar, Textbox, ItemContainer, Modal } from './components'
+import { Navbar, Textbox, ItemContainer, Modal, LoadingSpinner } from './components'
 import { theme } from './theme'
 import { useFetch } from './hooks/fetch-hook'
 
@@ -41,7 +41,7 @@ const App = () => {
         </Stack>
 
         <ItemContainer>
-          {loading && <h1>Loading...</h1>}
+          {loading && <LoadingSpinner />}
           {error && <Modal message={error.message} onClear={clearError} />}
           {data && data.map(item => 
             <Textbox key={item.id} data={item} />

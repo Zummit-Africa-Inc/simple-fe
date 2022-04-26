@@ -14,7 +14,7 @@ export const useFetch = () => {
                 throw new Error(data.message)
             }
 
-            setLoading()
+            setLoading(false)
             return data
         } catch (err) {
             setError(err)

@@ -21,6 +21,7 @@
 body {
   padding: 0 2rem;
   font-family: var(--lato);
+  overflow-x: hidden;
 }
 
 main {

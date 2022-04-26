@@ -1,6 +1,7 @@
 import React from 'react'
 import {  } from '@mui/material'
 import { makeStyles } from '@mui/styles'
+import { Oval } from 'react-loader-spinner'
 
 const useStyles = makeStyles({
     backdrop: {
@@ -21,7 +22,7 @@ const LoadingSpinner = () => {
 
   return (
     <div className={classes.backdrop}>
-
+        <Oval height={100} width={100} strokeWidth={5} strokeWidthSecondary={1} color='#081F4A' secondaryColor="white" />
     </div>
   )
 }
