@@ -1,3 +1,5 @@
 export { default as ItemContainer } from './ItemContainer'
+export { default as LoadingSpinner } from './LoadingSpinner'
+export { default as Modal } from './Modal'
 export { default as Navbar } from './Navbar'
 export { default as Textbox } from './Textbox'

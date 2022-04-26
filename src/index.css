@@ -6,6 +6,8 @@
   --light: #E5E5E5;
   --dark: #000;
   --mid: #081F4A;
+  --error: #F02525;
+  --success: #23F534;
   --lato: 'Lato', sans-serif;
   --leck: 'Leckerli One', cursive;
 }
