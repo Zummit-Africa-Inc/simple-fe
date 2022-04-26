@@ -12,17 +12,19 @@ export const theme = createTheme({
                     backgroundColor: 'var(--mid)',
                     color: 'var(--alt)',
                     margin: '3.5rem 0',
-                    marginRight: '1rem',
+                    marginRight: '1rem',            
                     transition: '0.3s ease',
+                    textTransform: 'capitalize',
                     '&:hover': {
                         transform: 'translateY(-5px)',
-                        backgroundColor: 'var(--base)'
+                        backgroundColor: 'var(--mid)'
                     }
                 },
                 outlined: {
                     backgroundColor: 'var(--error)',
                     color: 'var(--light)',
                     transition: '0.3s ease',
+                    textTransform: 'capitalize',
                     '&:hover': {
                         transform: 'translateY(-5px)',
                         backgroundColor: 'var(--light)',
