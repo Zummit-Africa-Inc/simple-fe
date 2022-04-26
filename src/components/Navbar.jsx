@@ -30,7 +30,7 @@ const Navbar = () => {
                 </Typography>
             </Stack>
 
-           <TextField value={value} onChange={(e) => setValue(e.target.value)} size='small' placeholder='Search...' />
+           <TextField value={value} onChange={(e) => setValue(e.target.value)} size='small' placeholder='Search...' disabled />
            
            <IconButton>
                <AccountCircleOutlined />

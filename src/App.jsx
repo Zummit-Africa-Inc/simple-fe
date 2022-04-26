@@ -16,7 +16,6 @@ const App = () => {
     try {
       const data = await sendRequest(apiUrl)
       setData(data)
-      console.log(data)
     } catch (err) {}
   }
 
