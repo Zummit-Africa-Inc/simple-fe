@@ -10,7 +10,9 @@ const useStyles = makeStyles({
         placeItems: 'center',
         backgroundColor: 'var(--light)',
         borderRadius: '5px',
-        borderBottom: '3px solid var(--error)'
+        borderBottom: '3px solid var(--error)',
+        padding: '0 1rem',
+        textAlign: 'center'
     },
     backdrop: {
         width: '100vw',
@@ -31,7 +33,7 @@ const Modal = ({ message, onClear }) => {
   return (
     <div className={classes.backdrop}>
         <div className={classes.modal}>
-            <Typography variant='h5' marginTop={5}>
+            <Typography variant='h6' color='error' marginTop={5}>
                 {message}
             </Typography>
 
