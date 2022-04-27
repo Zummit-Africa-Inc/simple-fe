@@ -40,7 +40,7 @@ export const theme = createTheme({
             primary: '#071B85',
             secondary: '#757575',
             alternate: '#000000',
-            error: '#F02525'
+            error: '#C00C00'
         }
     }
 })
