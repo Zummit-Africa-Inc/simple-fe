@@ -1,6 +1,6 @@
 import React from 'react'
 import { Paper, Stack, Typography } from '@mui/material'
-import { AccessTimeOutlined, BookmarkBorderOutlined, DoneOutlined, ShowChartOutlined, VerifiedOutlined } from '@mui/icons-material'
+import { AccessTimeOutlined, BookmarkBorderOutlined, DangerousOutlined, DoneOutlined, ShowChartOutlined, VerifiedOutlined } from '@mui/icons-material'
 import { styled } from '@mui/material/styles'
 import { makeStyles } from '@mui/styles'
 
@@ -39,19 +39,28 @@ const Textbox = ({ data }) => {
           <BookmarkBorderOutlined />
           </Stack>
           <Typography variant='h6' color='textPrimary' marginY={2}>
-            {data.name}
+            {data.title}
           </Typography>
           <Typography variant='subtitle1' color='textSecondary' gutterBottom>
-            The simplest and most effective way to skip the plenty text, and focus on the main points in ... 
+            {data.description}
           </Typography>
           <Stack direction='row' alignItems='center' marginY={2}>
             <Typography variant='subtitle2' color='textSecondary' marginRight={3}>
               Status:
             </Typography>
+            {data.status === 'live' ?
+            <>
             <Typography variant='subtitle2' color='textAlternate' marginX={2}>
               Verified
             </Typography>
             <VerifiedOutlined htmlColor='#0CBD1E' />
+            </> :
+            <>
+            <Typography variant='subtitle2' color='textAlternate' marginX={2}>
+              Not Verified
+            </Typography>
+            <DangerousOutlined htmlColor='#F02525' />
+            </>}
           </Stack>
           <Stack direction='row' alignItems='center' justifyContent='space-between'>
             <Stack direction='row' alignItems='center' justifyContent='space-between'>
