@@ -10,6 +10,7 @@
   --success: #23F534;
   --lato: 'Lato', sans-serif;
   --leck: 'Leckerli One', cursive;
+  --transition: all 0.5s ease;
 }
 
 * {
@@ -26,4 +27,8 @@ body {
 
 main {
   padding: 3rem 2rem;
+}
+
+a {
+  text-decoration: none;
 }
