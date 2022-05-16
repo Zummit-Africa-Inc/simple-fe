@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Stack, ThemeProvider, Typography } from '@mui/material'
 
-import { Navbar, Textbox, ItemContainer, Modal, LoadingSpinner } from '../components'
+import { Textbox, ItemContainer, Modal, LoadingSpinner } from '../components'
 import { theme } from '../theme'
 import { useFetch } from '../hooks/fetch-hook'
 
@@ -21,7 +21,6 @@ const Home = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Navbar />
       <main>
         <Stack>
           <Typography variant='h4'>
